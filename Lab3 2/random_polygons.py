@@ -26,30 +26,24 @@ def main():
     # Prompt user for shape type
     shape_choice = input("Should I draw triangles(T) or quads(Q)? ")
     
-    # Determine number of sides based on user choice
     if shape_choice.upper() == 'T':
         numSides = 3
-    else:  # Assume 'Q' or 'q'
+    else:
         numSides = 4
     
-    # Prompt for number of shapes to draw
     num_shapes = int(input("How many should I draw? "))
     
-    # Create window
     window = GraphWin('Random Polygons', WINDOW_WIDTH, WINDOW_HEIGHT)
     window.setBackground('white')
     
-    # Draw the specified number of shapes
     for shape_count in range(num_shapes):
-        # Create list of vertices
         vertexList = []
-        for count in range(numSides):  # loop to get enough Points
+        for i in range(numSides): 
             x = random.randrange(BORDER, WINDOW_WIDTH - BORDER)
             y = random.randrange(BORDER, WINDOW_HEIGHT - BORDER)
             vertex = Point(x, y)
             vertexList.append(vertex)
         
-        # Create polygon
         polygon = Polygon(vertexList)
         
         # Generate random color
