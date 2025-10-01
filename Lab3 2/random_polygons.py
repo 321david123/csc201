@@ -23,7 +23,6 @@ WINDOW_HEIGHT = 600
 BORDER = 10
 
 def main():
-    # Prompt user for shape type
     shape_choice = input("Should I draw triangles(T) or quads(Q)? ")
     
     if shape_choice.upper() == 'T':
@@ -32,11 +31,9 @@ def main():
         numSides = 4
     
     num_shapes = int(input("How many should I draw? "))
-    
     window = GraphWin('Random Polygons', WINDOW_WIDTH, WINDOW_HEIGHT)
     window.setBackground('white')
-    
-    for shape_count in range(num_shapes):
+    for i in range(num_shapes):
         vertexList = []
         for i in range(numSides): 
             x = random.randrange(BORDER, WINDOW_WIDTH - BORDER)
@@ -45,18 +42,13 @@ def main():
             vertexList.append(vertex)
         
         polygon = Polygon(vertexList)
-        
-        # Generate random color
         redNum = random.randrange(0, 256)
         greenNum = random.randrange(0, 256)
         blueNum = random.randrange(0, 256)
         color = color_rgb(redNum, greenNum, blueNum)
-        
-        # Set color and draw
         polygon.setFill(color)
         polygon.draw(window)
     
-    # Wait for click to close
     window.getMouse()
     window.close()
 
