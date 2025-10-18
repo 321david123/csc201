@@ -80,7 +80,6 @@ def main():
         y = y + MOSAIC_TILE_SIZE
     
     output_file.close()
-    
     print("File created: " + output_filename)
     print("Program ending.")
 

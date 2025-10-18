@@ -40,7 +40,6 @@ def main():
     
     second_line = input_file.readline()
     background_color_number = int(second_line)
-    
     if original_width > original_height:
         window_width = MAX_WINDOW_DIMENSION
         window_height = MAX_WINDOW_DIMENSION * (original_height / original_width)
@@ -79,7 +78,6 @@ def main():
         square.draw(win)
     
     input_file.close()
-    
     print("Picture completed.")
 
 main()
